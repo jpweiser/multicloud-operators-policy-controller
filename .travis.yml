@@ -9,5 +9,6 @@ script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s -- -b $GOPATH/bin v2.2.0
   - gosec -fmt sonarqube -out gosec.json -exclude=G104 ./...
-  - pwd
+  - ls
+  - cat gosec.json
   - sonar-scanner
