@@ -1,5 +1,6 @@
 language: go
-dist: trusty
+os: linux
+dist: xenial
 go:
   - '1.12.4'
 env:
