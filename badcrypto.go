@@ -1,3 +1,5 @@
+package badcrypto
+
 import "md5"
 
 
