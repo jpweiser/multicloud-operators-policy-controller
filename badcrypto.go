@@ -1,12 +1,14 @@
-package badcrypto
+package vuln
 
-import "md5"
+import "crypto/md5"
 
 
 func main(){
 
+	x := 0
+	y := 2
     if x > y {
-        h := md5.New() // this will also be ignored
+        h := md5.New()
     }
 
 }
