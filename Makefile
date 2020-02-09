@@ -151,3 +151,4 @@ go/gosec:
 sonar/gosec:
 	curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s -- -b $(GOPATH)/bin
 	gosec --quiet -fmt sonarqube -out gosec.json -no-fail ./...
+	sonar-scanner
