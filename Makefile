@@ -136,3 +136,17 @@ build-push-images: $(CONFIG_DOCKER_TARGET)
 ############################################################
 clean:
 	rm -f build/_output/bin/*
+
+
+############################################################
+# gosec section
+############################################################
+.PHONY go/gosec
+go/gosec:
+	curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s -- -b $GOPATH/bin
+	gosec --quiet ./...
+
+.PHONY sonar/gosec
+sonar/gosec:
+	curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s -- -b $GOPATH/bin
+	gosec --quiet -fmt sonarqube -out gosec.json -no-fail ./...
